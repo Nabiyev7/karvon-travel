@@ -1,0 +1,11 @@
+.page {
+  /* Every accent in the page reads from these two, so re-theming a city is a
+     single hue change. The transition animates --hue, which re-derives both. */
+  --accent: oklch(0.8 0.11 var(--hue));
+  --accent-dim: oklch(0.8 0.11 var(--hue) / 0.14);
+
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--cream);
+  transition: --hue 0.9s ease;
+}

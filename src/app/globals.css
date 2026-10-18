@@ -1,0 +1,102 @@
+/* Design tokens from the Karvon handoff. */
+
+/* Registering the hue lets the accent colour animate between cities instead of
+   snapping; browsers without @property simply switch instantly. */
+@property --hue {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 225;
+}
+
+:root {
+  --bg: #0e0d0c;
+  --bg-cell: #141311;
+  --bg-popover: #1a1816;
+
+  --cream: #f3efe7;
+  --cream-82: rgba(243, 239, 231, 0.82);
+  --cream-75: rgba(243, 239, 231, 0.75);
+  --cream-70: rgba(243, 239, 231, 0.7);
+  --cream-60: rgba(243, 239, 231, 0.6);
+  --cream-55: rgba(243, 239, 231, 0.55);
+  --cream-45: rgba(243, 239, 231, 0.45);
+
+  --line: rgba(243, 239, 231, 0.14);
+  --line-soft: rgba(243, 239, 231, 0.12);
+  --line-strong: rgba(243, 239, 231, 0.18);
+
+  --error: oklch(0.75 0.14 25);
+
+  /* The side gutter also clears notches and rounded corners on phones, so
+     every section that uses it stays inside the safe area. */
+  --gutter: max(
+    clamp(20px, 5vw, 72px),
+    env(safe-area-inset-left),
+    env(safe-area-inset-right)
+  );
+  --section-y: clamp(80px, 12vw, 140px);
+  --section-y-tight: clamp(72px, 10vw, 120px);
+
+  --radius-card: 2px;
+  --radius-field: 4px;
+  --radius-pill: 999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+button {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+blockquote,
+figure,
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent, var(--cream));
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

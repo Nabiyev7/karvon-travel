@@ -1,0 +1,27 @@
+/* All six city photos are stacked; only the active one is opaque, so switching
+   city crossfades rather than swapping. */
+.img {
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.slow {
+  transition: opacity 1s ease;
+}
+
+.active {
+  opacity: 1;
+}
+
+/* Slow Ken Burns push on the hero: the active photo settles from 1.06 to 1. */
+.motion {
+  transform: scale(1.06);
+  transition:
+    opacity 1.2s ease,
+    transform 7s ease-out;
+}
+
+.motion.active {
+  transform: scale(1);
+}

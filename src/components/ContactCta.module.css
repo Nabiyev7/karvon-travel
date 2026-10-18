@@ -1,0 +1,78 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  min-height: min(560px, 100vh);
+  display: flex;
+  align-items: center;
+  padding: var(--section-y-tight) var(--gutter);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 13, 12, 0.72);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 760px;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 500;
+  font-size: clamp(48px, 6vw, 88px);
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--cream-82);
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.primary,
+.secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 18px 30px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  font-weight: 700;
+}
+
+.secondary {
+  border: 1px solid rgba(243, 239, 231, 0.5);
+  background: none;
+  color: var(--cream);
+  font-weight: 600;
+}
+
+@media (max-width: 759px) {
+  .primary,
+  .secondary {
+    flex: 1 1 100%;
+  }
+}

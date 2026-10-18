@@ -1,0 +1,66 @@
+.section {
+  padding: var(--section-y-tight) var(--gutter);
+  background: var(--accent-dim);
+  transition: --hue 1s ease;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.title {
+  max-width: 720px;
+  font-family: var(--font-cormorant), serif;
+  font-weight: 500;
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.note {
+  max-width: 360px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(243, 239, 231, 0.72);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 36px 28px 44px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.cardTitle {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.1;
+}
+
+.cardText {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--cream-70);
+}
