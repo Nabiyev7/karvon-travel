@@ -1,0 +1,28 @@
+.footer {
+  padding: 56px var(--gutter) calc(56px + env(safe-area-inset-bottom));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--cream-55);
+}
+
+.logo {
+  font-family: var(--font-cormorant), serif;
+  font-size: 24px;
+  color: var(--cream);
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+}
+
+/* The two footer links are small text, so give them a full tap target. */
+.tap {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}

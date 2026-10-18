@@ -1,0 +1,117 @@
+.section {
+  padding: var(--section-y) var(--gutter) var(--section-y-tight);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+
+.intro {
+  position: sticky;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 500;
+  font-size: clamp(44px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.figure {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--bg-popover);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding-top: clamp(0px, 8vw, 160px);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream-60);
+}
+
+.itemTitle {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 500;
+  font-size: clamp(32px, 3.2vw, 44px);
+  line-height: 1.05;
+}
+
+.desc {
+  max-width: 520px;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--cream-75);
+  text-wrap: pretty;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  padding: 0;
+  background: none;
+  border: none;
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+@media (max-width: 759px) {
+  .intro {
+    position: relative;
+    top: auto;
+  }
+
+  .figure {
+    aspect-ratio: 4 / 3;
+  }
+
+  .link {
+    min-height: 44px;
+  }
+}

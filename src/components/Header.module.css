@@ -1,0 +1,118 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: clamp(18px, 4vw, 28px) var(--gutter);
+}
+
+.logo {
+  font-family: var(--font-cormorant), serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2.4vw, 32px);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cream-82);
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border: 1px solid rgba(243, 239, 231, 0.4);
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.menuButton {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(243, 239, 231, 0.4);
+  border-radius: var(--radius-pill);
+  background: rgba(14, 13, 12, 0.35);
+  color: var(--cream);
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Fullscreen menu, mobile only. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 120px 24px calc(40px + env(safe-area-inset-bottom));
+}
+
+.overlayNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.overlayLink {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-family: var(--font-cormorant), serif;
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+.overlayCta {
+  display: flex;
+  justify-content: center;
+  padding: 18px;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-manrope), sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (max-width: 759px) {
+  .nav,
+  .cta {
+    display: none;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+}
